@@ -1,0 +1,32 @@
+{
+  "name": "amerongen_n_3039_favourite_things",
+  "version": "1.0.0",
+  "description": "An app showcasing an introduction to a couple of my favourite things, using dynamic elements to present further details pulled from objects in a json library.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasGeoffrey/Amerongen_N_3039_Favourite_Things.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "package_management"
+  ],
+  "author": "NGA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicholasGeoffrey/Amerongen_N_3039_Favourite_Things/issues"
+  },
+  "homepage": "https://github.com/NicholasGeoffrey/Amerongen_N_3039_Favourite_Things#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.42.1"
+  }
+}

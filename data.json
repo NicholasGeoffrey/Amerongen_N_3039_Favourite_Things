@@ -1,0 +1,20 @@
+{
+    "Hamilton": {
+        "title":"Hamilton",
+        "media":"Musical",
+        "description":"A theatrical production telling the story of one of the US founding fathers, Alexander Hamilton",
+        "poster":"hamilton.jpg"
+    },
+    "Shingeki": {
+        "title":"Shingeki No Kyojin",
+        "media":"Animated Series",
+        "description":"A series about humanity's last fight for survival against an onslaught of titans",
+        "poster":"shingeki.jpg"
+    },
+    "StarWars": {
+        "title":"Star Wars",
+        "media":"Franchise",
+        "description":"A beloved franchise that debuted in 1977 featuring a fantasy story set in a science fiction environment.",
+        "poster":"starwars.jpg"
+    }
+  }
