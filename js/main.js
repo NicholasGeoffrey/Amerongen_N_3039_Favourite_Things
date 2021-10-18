@@ -1,35 +1,81 @@
 (()=> {
     const theTeam = document.querySelector("#favourite-things"),
-          theTemplate = document.querySelector("#bio-template").content;        
-    
-    let buttons = document.querySelectorAll("button")      
-        // things = {};
+    theTemplate = document.querySelector("#bio-template").content; 
 
-      /*  function showData() {
-           let key = this.dataset.key;
-           let display = document.querySelector("h1");
+    let buttons = document.querySelectorAll("button");
 
-           display.textContent = things[key].name;
-       } */
-    //start with fetch call
+    function buildControls(info) {
+        info.forEach(things =>{
+            let panel = theTemplate.cloneNode(true),
+            display = panel.firstElementChild.children;
+
+            panel.firstElementChild.dataset.key = things.id;
+
+            display[3].querySelector('img').src = `images/${info[panel].poster}`;
+        display[0].textContent = things[key].title;
+        display[1].textContent = things[key].media;
+        display[2].textContent = things[key].description
+
+        theTeam.appendChild(panel);
+        })
+    }
+
+    function showData(event) {
+        let key = this.dataset.key;
+        let display = document.querySelector("h1");
+
+        display[3].querySelector('img').src = `images/${info[panel].poster}`;
+        display[0].textContent = things[key].title;
+        display[1].textContent = things[key].media;
+        display[2].textContent = things[key].description
+
+        showData({id: key});
+    }
     function getData() {
         //use the Fetch API to retrieve some data
         fetch("./data.json")
         .then(res => res.json()) // unpack the API response (turn it back into plain js)
         .then(data => {
             console.log(data);
-            getData = data;
+            // getData = data;
+            buildControls(data);
+          //  displayStuff = data;
             // do anything else here that we want with our data
             //call a function to generate our dynamic content
-            buildTeam(data);
-            // expandTeam(data);
-        showFavourites(data);
+           
+        })
+    }
+/*           
+    
+    let buttons = document.querySelectorAll("button")      
+    var displayStuff;
+        // things = {};
+
+       function showData() {
+           let key = this.dataset.key;
+           let display = document.querySelector("h1");
+
+           display.textContent = things[key].name;
+       } 
+    //start with fetch call
+    */
+/*     function getData() {
+        //use the Fetch API to retrieve some data
+        fetch("./data.json")
+        .then(res => res.json()) // unpack the API response (turn it back into plain js)
+        .then(data => {
+            console.log(data);
+            getData = data;
+            displayStuff = data;
+            // do anything else here that we want with our data
+            //call a function to generate our dynamic content
+           
         })
 .catch(error => console.error(error)); //catch and report any errors
 
-    }
+    } */
 
-    function buildTeam(info) {
+   /*  function buildTeam(info) {
         // first, get a reference to all of the people (the keys of the info object)
         let team = Object.keys(info);
 
@@ -38,17 +84,19 @@
             let panel = theTemplate.cloneNode(true),
                 memberInfo = panel.firstElementChild.children;
 
-            memberInfo[0].querySelector('img').src = `images/${info[person].poster}`;
-            memberInfo[1].textContent = info[person].title;
-            memberInfo[2].textContent = info[person].media;
-            memberInfo[3].textContent = info[person].description;
+            memberInfo[0].querySelector('img').src = `images/${info[panel].poster}`;
+            memberInfo[1].textContent = info[panel].title;
+            memberInfo[2].textContent = info[panel].media;
+            memberInfo[3].textContent = info[panel].description;
 
             //put the virtual panel in the tean section in our HTML page
             theTeam.appendChild(panel);
+            theTeam.appendChild(memberInfo);
         })
+    }
         // next, clone the template because we can't use it directly
         debugger;
-    }
+    } */
      /*  function showFavourites(info) {
           info.forEach(thing => {
           let display = theTemplate.cloneNode(true),
@@ -84,7 +132,7 @@
         })
         // next, clone the template because we can't use it directly
         debugger;
-    } */  
+    }   
    // function selectThing(info) {
    //    if (dataDisplay.children.length > 0) {
     //        dataDisplay.innerHTML = "";
@@ -98,11 +146,12 @@
    // } panel.forEach(template => template.addEventlistener("click", selectThing));
     // invoke the getData function
     getData();
+*/
+buttons.forEach(button => button.addEventListener("click", buildControls));
 
-buttons.forEach(button => button.addEventListener("click", buildTeam));
-
+getData(null, buildControls);
    // selectThing();
-
+ 
 }
 
 )()
