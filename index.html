@@ -11,30 +11,34 @@
     <main>
     
         <!--This is where our dynamic data will go-->
+        <!-- you will need to add these buttons dynamically AFTER you get the data changing -->
+        <!-- this will happen inside the Fetch call in your main.js file -->
         <section>
-        <button class="icon hamilton" data-key="Hamilton"><img src="images/hamilton.png" alt="Hamilton Icon"></button>
-        <button class="icon shingeki" data-key="Shingeki"><img src="images/shingeki.png" alt="Shingeki Icon"></button>
-        <button class="icon starwars" data-key="StarWars"><img class="icon starwars" src="images/starwars.png" alt="Star Wars Icon"></button>
-    </section>
+            <button class="icon hamilton" data-key="Hamilton"><img src="images/hamilton.png" alt="Hamilton Icon"></button>
+            <button class="icon shingeki" data-key="Shingeki"><img src="images/shingeki.png" alt="Shingeki Icon"></button>
+            <button class="icon starwars" data-key="StarWars"><img class="icon starwars" src="images/starwars.png" alt="Star Wars Icon"></button>
+        </section>
     
-    <h1>Nicholas Amerongen: Favourite Things</h1>
-</main>
+        <h1>Nicholas Amerongen: Favourite Things</h1>
 
-    <!-- template tags at the bottom -->
-    <!-- template tags don't get rendered - they just hold reusable content -->
-    <template id="bio-template">
+
+        <!-- you don't necessarily  need a template for your things markup, because-->
+        <!-- it's only one set of elements that you need to change. no need to create three -->
+        <!-- <template id="bio-template"> -->
+
+        <!-- just change these elements' content on a click, using data.json -->
         <section class="bio-panel"> 
             <div class="p_avatar"> <!-- this is index 0 (the first child)-->
                 <img src="" alt="">
             </div> 
-    
+
             <h2 class="p_title"></h2> <!-- this is index 1 (the second child)-->
             <h3 class="p_media"></h3> <!-- this is index 2 (the third child)-->
-            <p class="p_description"> <!-- this is index 3 (the fourth child)-->
-                
-            </p>
+            <p class="p_description"> <!-- this is index 3 (the fourth child)--></p>
         </section>
-    </template>
+    </main>
+
+    <!-- </template> -->
     <script src="js/main.js" type="module" defer></script>
 </body>
 </html>
